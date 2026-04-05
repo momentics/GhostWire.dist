@@ -1,0 +1,7 @@
+# Repository-local noise
+.DS_Store
+Thumbs.db
+
+# Temporary download/cache files
+*.tmp
+*.bak
