@@ -1,0 +1,146 @@
+{
+  "datacenters": {
+    "dc_list": [
+      {
+        "dc_id": 1,
+        "websocket": {
+          "hostname": "kws1.web.telegram.org",
+          "path": "/apiws",
+          "port": 443,
+          "protocol": "wss"
+        },
+        "endpoints": [
+          {
+            "ip": "149.154.175.50",
+            "port": 443,
+            "is_primary": true,
+            "sni": "kws1.web.telegram.org"
+          }
+        ]
+      },
+      {
+        "dc_id": 2,
+        "websocket": {
+          "hostname": "kws2.web.telegram.org",
+          "path": "/apiws",
+          "port": 443,
+          "protocol": "wss"
+        },
+        "endpoints": [
+          {
+            "ip": "149.154.167.220",
+            "port": 443,
+            "is_primary": true,
+            "sni": "kws2.web.telegram.org"
+          }
+        ]
+      },
+      {
+        "dc_id": 3,
+        "note": "DC3 users migrated to DC1 in 2020.",
+        "websocket": {
+          "hostname": "kws3.web.telegram.org",
+          "path": "/apiws",
+          "port": 443,
+          "protocol": "wss"
+        },
+        "endpoints": [
+          {
+            "ip": "149.154.175.100",
+            "port": 443,
+            "is_primary": true,
+            "sni": "kws3.web.telegram.org"
+          }
+        ]
+      },
+      {
+        "dc_id": 4,
+        "websocket": {
+          "hostname": "kws4.web.telegram.org",
+          "path": "/apiws",
+          "port": 443,
+          "protocol": "wss"
+        },
+        "endpoints": [
+          {
+            "ip": "149.154.167.220",
+            "port": 443,
+            "is_primary": true,
+            "sni": "kws4.web.telegram.org"
+          }
+        ]
+      },
+      {
+        "dc_id": 5,
+        "websocket": {
+          "hostname": "kws5.web.telegram.org",
+          "path": "/apiws",
+          "port": 443,
+          "protocol": "wss"
+        },
+        "endpoints": [
+          {
+            "ip": "91.108.56.100",
+            "port": 443,
+            "is_primary": true,
+            "sni": "kws5.web.telegram.org"
+          }
+        ]
+      },
+      {
+        "dc_id": 203,
+        "note": "Special DC for media/file traffic. Uses same WSS endpoint as DC2.",
+        "websocket": {
+          "hostname": "kws2.web.telegram.org",
+          "path": "/apiws",
+          "port": 443,
+          "protocol": "wss"
+        },
+        "endpoints": [
+          {
+            "ip": "149.154.167.220",
+            "port": 443,
+            "is_primary": true,
+            "sni": "kws2.web.telegram.org"
+          }
+        ]
+      }
+    ]
+  },
+
+  "ip_detection": {
+    "telegram_ip_ranges": [
+      {
+        "cidr": "149.154.160.0/20"
+      },
+      {
+        "cidr": "91.108.0.0/16"
+      },
+      {
+        "cidr": "91.105.128.0/20"
+      },
+      {
+        "cidr": "91.105.192.0/23"
+      },
+      {
+        "cidr": "185.76.151.0/24"
+      }
+    ],
+    "dc_ip_mapping": {
+      "149.154": {
+        "160-163": 1,
+        "164-167": 2,
+        "168-171": 3,
+        "172-174": 4,
+        "175": 3
+      },
+      "91.108": {
+        "56-59": 5,
+        "8-11": 3,
+        "12-15": 4
+      },
+      "91.105": 2,
+      "185.76": 2
+    }
+  }
+}
