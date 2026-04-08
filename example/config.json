@@ -5,23 +5,19 @@
         "dc_id": 1,
         "websocket": {
           "hostname": "kws1.web.telegram.org",
+          "media_hostname": "kws1-1.web.telegram.org",
           "path": "/apiws",
           "port": 443,
           "protocol": "wss"
         },
         "endpoints": [
-          {
-            "ip": "149.154.175.50",
-            "port": 443,
-            "is_primary": true,
-            "sni": "kws1.web.telegram.org"
-          }
         ]
       },
       {
         "dc_id": 2,
         "websocket": {
           "hostname": "kws2.web.telegram.org",
+          "media_hostname": "kws2-1.web.telegram.org",
           "path": "/apiws",
           "port": 443,
           "protocol": "wss"
@@ -31,7 +27,8 @@
             "ip": "149.154.167.220",
             "port": 443,
             "is_primary": true,
-            "sni": "kws2.web.telegram.org"
+            "sni": "kws2.web.telegram.org",
+            "is_media": true
           }
         ]
       },
@@ -40,23 +37,19 @@
         "note": "DC3 users migrated to DC1 in 2020.",
         "websocket": {
           "hostname": "kws3.web.telegram.org",
+          "media_hostname": "kws3-1.web.telegram.org",
           "path": "/apiws",
           "port": 443,
           "protocol": "wss"
         },
         "endpoints": [
-          {
-            "ip": "149.154.175.100",
-            "port": 443,
-            "is_primary": true,
-            "sni": "kws3.web.telegram.org"
-          }
         ]
       },
       {
         "dc_id": 4,
         "websocket": {
           "hostname": "kws4.web.telegram.org",
+          "media_hostname": "kws4-1.web.telegram.org",
           "path": "/apiws",
           "port": 443,
           "protocol": "wss"
@@ -66,7 +59,8 @@
             "ip": "149.154.167.220",
             "port": 443,
             "is_primary": true,
-            "sni": "kws4.web.telegram.org"
+            "sni": "kws4.web.telegram.org",
+            "is_media": true
           }
         ]
       },
@@ -74,17 +68,12 @@
         "dc_id": 5,
         "websocket": {
           "hostname": "kws5.web.telegram.org",
+          "media_hostname": "kws5-1.web.telegram.org",
           "path": "/apiws",
           "port": 443,
           "protocol": "wss"
         },
         "endpoints": [
-          {
-            "ip": "91.108.56.100",
-            "port": 443,
-            "is_primary": true,
-            "sni": "kws5.web.telegram.org"
-          }
         ]
       },
       {
@@ -92,6 +81,7 @@
         "note": "Special DC for media/file traffic. Uses same WSS endpoint as DC2.",
         "websocket": {
           "hostname": "kws2.web.telegram.org",
+          "media_hostname": "kws2-1.web.telegram.org",
           "path": "/apiws",
           "port": 443,
           "protocol": "wss"
@@ -101,7 +91,8 @@
             "ip": "149.154.167.220",
             "port": 443,
             "is_primary": true,
-            "sni": "kws2.web.telegram.org"
+            "sni": "kws2.web.telegram.org",
+            "is_media": true
           }
         ]
       }
