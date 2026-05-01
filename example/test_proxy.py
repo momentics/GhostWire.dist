@@ -137,10 +137,11 @@ def run_test(
 
             stats = gw.get_stats()
             sys.stdout.flush()
+            print(f"Proxy state: {gw.get_state().name}")
             print_stats(stats)
             sys.stdout.flush()
 
-            if not gw.is_running():
+            if gw.get_state().name == "OFFLINE":
                 print("      Warning: Proxy stopped!")
                 break
 
@@ -172,13 +173,24 @@ def run_test(
         print()
         sys.stdout.flush()
 
+        # =====================================================================
+        # Wait for key press before exiting
+        # =====================================================================
+        print("Press Enter to exit...")
+        sys.stdout.flush()
+        try:
+            input()
+        except (EOFError, KeyboardInterrupt):
+            pass
+
         return 0
 
     except FileNotFoundError as e:
         print(f"\nERROR: Config file not found")
         print(f"  Message: {e}")
         print()
-        print("  Make sure config.json exists")
+        print("  Make sure config.json exists:")
+        print("    copy config.json examples/")
         print()
         sys.stdout.flush()
         return 1
@@ -260,6 +272,7 @@ Examples:
 
     args = parser.parse_args()
 
+    # Determine port: CLI override > config file > default 1080
     if args.port is not None:
         port = args.port
     elif os.path.exists(args.config):

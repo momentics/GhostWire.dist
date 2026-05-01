@@ -44,13 +44,13 @@ Or use the automated install scripts:
 **PowerShell (Windows):**
 
 ```powershell
-.\install\fetch.ps1 -Version 1.0.0 -Asset ghostwire-windows-x86_64.zip
+.\install\fetch.ps1 -Version 1.0.6 -Asset ghostwire-windows-x86_64.zip
 ```
 
 **Bash (Linux/macOS):**
 
 ```bash
-./install/fetch.sh 1.0.0 ghostwire-linux-x86_64.tar.gz
+./install/fetch.sh 1.0.6 ghostwire-linux-x86_64.tar.gz
 ```
 
 ### 2. Link the Library
