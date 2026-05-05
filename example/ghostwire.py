@@ -19,7 +19,6 @@ from enum import IntEnum
 
 
 FRIENDLY_FEATURE_LINES = (
-    "",
 )
 
 
